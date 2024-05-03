@@ -1,0 +1,23 @@
+<div class="flex justify-between my-10 space-x-4" data-controller="toolbar">
+  <select class="select select-bordered select-sm">
+    <option disabled selected>Select Region</option>
+    <option>USA</option>
+    <option>Poland</option>
+    <option>Germany</option>
+  </select>
+  <div class="flex space-x-3">
+    <input type="number" class="input w-24 input-bordered input-sm" min="1" max="1000" placeholder="Error" data-toolbar-target="errorField" data-action="toolbar#changeErrorRange"/>
+
+    <div class="relative mb-6">
+        <input type="range" value="10" min="1" max="1000" class="w-full h-2 bg-secondary rounded-lg appearance-none cursor-pointer" data-toolbar-target="errorRange" data-action="toolbar#changeErrorField">
+        <span class="text-sm absolute text-neutral start-0 -bottom-6">1</span>
+        <span class="text-sm absolute text-neutral end-0 -bottom-6">1000</span>
+    </div>
+  </div>
+
+  <div class="join">
+    <input type="number" class="input input-bordered input-sm join-item" placeholder="Seed"/>
+    <button class="btn btn-sm btn-secondary join-item">Random</button> 
+  </div>
+</div>
+<!-- plot 23 block 29/A -->

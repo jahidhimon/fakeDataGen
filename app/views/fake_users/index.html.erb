@@ -1,0 +1,19 @@
+<div class="w-10/12 mx-auto">
+  <%= render "toolbar" %>
+  
+  <table class="table table-zebra">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Job</th>
+        <th>Company</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody id="users">
+      <%= render @users %>
+    </tbody>
+  </table>
+
+  <%= render "pager", pagy: @pagy %>
+</div>
