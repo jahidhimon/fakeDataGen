@@ -1,0 +1,5 @@
+<%= turbo_stream.append "users" do %>
+  <%= render @users %>
+<% end %>
+
+<%= turbo_stream.replace "pager", partial: "pager", locals: {pagy: @pagy} %>
