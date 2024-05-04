@@ -13,12 +13,12 @@ export default class extends Controller {
     this.errorFieldTarget.value = this.errorRangeTarget.value
     this.submitForm()
   }
+
   changeErrorRange() {
-    this.errorRangeTarget.value = this.errorFieldTarget.value
+    this.errorRangeTarget.value = Math.min(this.errorFieldTarget.value, 10)
   }
 
   submitForm() {
-    console.log(this.getformTarget)
     this.getformTarget.submit()
   }
 
@@ -26,5 +26,6 @@ export default class extends Controller {
     event.preventDefault()
     seed = Math.floor(Math.random() * (1 << 30) + 1)
     this.seedFieldTarget.value = seed
+    this.submitForm()
   }
 }

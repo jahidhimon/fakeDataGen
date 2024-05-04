@@ -24,9 +24,9 @@
           </label>
           <%= form.number_field :error,
                 class: "input w-24 input-bordered input-sm", 
-                min: "1", 
+                min: "0", 
                 max: "1000", 
-                value: @error_value || 20,
+                value: @error_value || "0",
                 data: {
                         toolbar_target: "errorField", 
                         action: "toolbar#changeErrorRange"
@@ -39,9 +39,13 @@
             <span class="label-text">Error (Range)</span>
           </label>
           <div class="relative mb-6">
-              <input type="range" value="10" min="1" max="1000" step="100" class="w-full h-2 bg-secondary rounded-lg appearance-none cursor-pointer" data-toolbar-target="errorRange" data-action="toolbar#changeErrorField">
-              <span class="text-sm absolute text-neutral start-0 -bottom-6">1</span>
-              <span class="text-sm absolute text-neutral end-0 -bottom-6">1000</span>
+              <input type="range" min="0" max="10" step="0.1" 
+                  class="w-full h-2 bg-secondary rounded-lg appearance-none cursor-pointer" 
+                  data-toolbar-target="errorRange" 
+                  data-action="toolbar#changeErrorField">
+ 
+              <span class="text-sm absolute text-neutral start-0 -bottom-6">0</span>
+              <span class="text-sm absolute text-neutral end-0 -bottom-6">10</span>
           </div>
         </div>
       </div>

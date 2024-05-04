@@ -18,4 +18,8 @@ class FakeUser
   def to_csv
     [@index, @id, @name, @phone, @location]
   end
+
+  def self.from_array(array)
+    FakeUser.new(array[0], array[1], array[2], array[3], array[4])
+  end
 end
