@@ -55,8 +55,8 @@
           <span class="label-text">Seed</span>
         </label>
         <div class="join">
-          <%= form.number_field :seed, class: "input input-bordered input-sm join-item", data: {toolbar_target: "seedField"}, value: @seed || 232323 %>
-          <button class="btn btn-sm btn-secondary join-item" data-action="toolbar#generateRandomSeed">
+          <%= form.number_field :seed, class: "input input-bordered input-sm join-item", data: {toolbar_target: "seedField"}, value: @seed %>
+          <button class="btn btn-sm btn-secondary join-item" data-action="toolbar#generateRandomSeed" type="button">
             <svg width="24" height="24" fill-rule="evenodd" clip-rule="evenodd">
               <path d="M21.67 3.955l-2.825-2.202.665-.753 4.478 3.497-4.474 3.503-.665-.753 2.942-2.292h-4.162c-3.547.043-5.202 3.405-6.913 7.023 1.711 3.617 3.366 6.979 6.913 7.022h4.099l-2.883-2.247.665-.753 4.478 3.497-4.474 3.503-.665-.753 2.884-2.247h-4.11c-3.896-.048-5.784-3.369-7.461-6.858-1.687 3.51-3.592 6.842-7.539 6.858h-2.623v-1h2.621c3.6-.014 5.268-3.387 6.988-7.022-1.72-3.636-3.388-7.009-6.988-7.023h-2.621v-1h2.623c3.947.016 5.852 3.348 7.539 6.858 1.677-3.489 3.565-6.81 7.461-6.858h4.047z"/>
             </svg>
@@ -67,8 +67,9 @@
       <div class="form-control">
         <label class="label">
           <span class="label-text">Export</span>
+      <button type="submit" class="w-0 h-0"></button>
         </label>
-        <%= button_to "", name: "export", value: "csv", class: "btn btn-secondary btn-sm", data: {turbo: false} do %>
+        <%= button_to "", name: "export", value: "csv", type: "button", class: "btn btn-secondary btn-sm", data: {turbo: false} do %>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
           </svg>

@@ -7,9 +7,10 @@ class FakeUsersController < ApplicationController
   def index
     @selected_location = params['location'] || 'en-US'
 
-    @seed = params['seed'].to_i || 2_342_223
+    @seed = params['seed'].to_i || 0
 
     @error_value = params['error'].to_f || 0
+    p @error_value
 
     @users = generate_fake_users(@seed, @selected_location, @error_value)
 
@@ -46,7 +47,7 @@ class FakeUsersController < ApplicationController
     error += 1 if rand < error % 1
     error.to_i.times do
       i = rand(array.length)
-      array[i] = error_method.call(array[i]) if array[i].empty?
+      array[i] = error_method.call(array[i]) unless array[i].empty?
     end
     array
   end
