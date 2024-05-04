@@ -25,7 +25,7 @@ class FakeUsersController < ApplicationController
 
     users = []
     1000.times do |i|
-      users << FakeUser.new(i, Faker::Name.name, Faker::Job.title, Faker::Company.name,
+      users << FakeUser.new(i, Faker::IdNumber.valid, Faker::Name.name_with_middle, Faker::PhoneNumber.phone_number,
                             Faker::Address.full_address)
     end
     users
@@ -33,7 +33,7 @@ class FakeUsersController < ApplicationController
 
   def generate_csv(users)
     CSV.generate do |csv|
-      csv << ['No.', 'Name', 'Job', 'Company', 'Address']
+      csv << ['No.', 'id', 'Name', 'Phone', 'Address']
       users.each do |user|
         csv << user.to_csv
       end

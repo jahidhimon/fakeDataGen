@@ -3,20 +3,19 @@
 class FakeUser
   include ActiveModel::API
 
-  attr_accessor :index, :name, :job, :company, :location
+  attr_accessor :index, :id, :name, :phone, :location
 
-  # LOCATIONS = %w[[France 'fr'] []Georgia].freeze
   LOCATIONS = [%w[France fr], %w[USA en-US], %w[Bulgaria bg]].freeze
 
-  def initialize(index, name, job, company, location)
+  def initialize(index, id, name, phone, location)
     @index = index + 1
+    @id = id
     @name = name
-    @job = job
-    @company = company
+    @phone = phone
     @location = location
   end
 
   def to_csv
-    [@index, @name, @job, @company, @location]
+    [@index, @id, @name, @phone, @location]
   end
 end
